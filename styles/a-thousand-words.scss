@@ -1,0 +1,160 @@
+@import "common";
+
+.banner {
+  background-color: $secondary-color;
+  color: $white;
+  padding: 100px 0 60px;
+  text-align: center;
+
+  h1 {
+    color: $white;
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    opacity: 0.8;
+  }
+}
+
+.content {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0 20px;
+
+  figure {
+    margin: 0 0 30px;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+      @include box-shadow();
+    }
+
+    figcaption {
+      margin-top: 10px;
+      font-style: italic;
+      color: $light-text;
+    }
+  }
+
+  p {
+    color: $text-color;
+    margin-bottom: 30px;
+  }
+}
+
+.blog-info-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+  padding: 20px 0;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+
+  > div {
+    flex: 1;
+    min-width: 200px;
+
+    h5 {
+      font-size: 16px;
+      margin-bottom: 15px;
+      color: $secondary-color;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 5px;
+
+        a {
+          color: $light-text;
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  .share-wrapper {
+    display: flex;
+    gap: 10px;
+
+    .button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.related-posts-wrapper {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+
+  > div {
+    background-color: $white;
+    border-radius: 5px;
+    padding: 20px;
+    @include box-shadow();
+    @include transition();
+
+    &:hover {
+      transform: translateY(-5px);
+      @include box-shadow(0, 5px, 15px, 0, rgba(0, 0, 0, 0.1));
+    }
+
+    h4 {
+      font-size: 14px;
+      color: $light-text;
+      margin-bottom: 10px;
+
+      a {
+        color: $light-text;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+
+      a {
+        color: $secondary-color;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    p {
+      color: $light-text;
+      margin-bottom: 15px;
+    }
+
+    a[href*="Read"] {
+      display: inline-block;
+      font-weight: 500;
+    }
+  }
+}

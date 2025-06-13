@@ -1,0 +1,76 @@
+@import "common";
+
+.banner {
+  background-color: $secondary-color;
+  color: $white;
+  padding: 100px 0 60px;
+  text-align: center;
+
+  h1 {
+    color: $white;
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+}
+
+.blog-content {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0 20px;
+
+  > div {
+    background-color: $white;
+    border-radius: 5px;
+    padding: 30px;
+    margin-bottom: 30px;
+    @include box-shadow();
+
+    h4 {
+      font-size: 14px;
+      color: $light-text;
+      margin-bottom: 10px;
+
+      a {
+        color: $light-text;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+
+      a {
+        color: $secondary-color;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    p {
+      color: $text-color;
+      margin-bottom: 15px;
+    }
+
+    a[href*="Read"] {
+      display: inline-block;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    h4:last-child {
+      color: $light-text;
+      font-size: 14px;
+      margin-top: 20px;
+
+      b {
+        color: $text-color;
+      }
+    }
+  }
+}

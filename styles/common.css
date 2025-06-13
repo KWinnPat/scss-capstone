@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+a:hover {
+  color: #c1134e;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #333;
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+header {
+  background-color: #fff;
+  padding: 10px 0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+header navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+header navbar .title {
+  padding: 8px 0;
+}
+header navbar .title a {
+  font-size: 18px;
+  font-weight: 300;
+  color: #666;
+  font-family: Arial, Helvetica, sans-serif;
+}
+header navbar .nav-links {
+  display: flex;
+  gap: 20px;
+  text-transform: uppercase;
+  font-size: 13px;
+  align-items: center;
+}
+header navbar .nav-links button {
+  background-color: #e91e63;
+  border: none;
+  padding: 18px 25px;
+  border-radius: 30px;
+}
+header navbar .nav-links button a {
+  color: #fff;
+  cursor: pointer;
+  font-weight: 300;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  font-size: 13px;
+}
+header navbar .nav-links button a:hover {
+  background-color: #c1134e;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+header navbar .nav-links a {
+  color: #666;
+  font-weight: 200;
+}
+header navbar .nav-links a:hover {
+  color: #e91e63;
+}
+
+main {
+  margin-top: 70px;
+  min-height: calc(100vh - 150px);
+}
+
+footer {
+  background-color: #a81d84;
+  color: #fff;
+  padding: 30px 0;
+  margin-top: 50px;
+}
+footer .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .footer-content .footer-links {
+  display: flex;
+  gap: 20px;
+}
+footer .footer-content .footer-links a {
+  color: #fff;
+  opacity: 0.8;
+}
+footer .footer-content .footer-links a:hover {
+  opacity: 1;
+}
+footer .footer-content .credits {
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.button {
+  background-color: #e91e63;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+.button:hover {
+  background-color: #c1134e;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  header navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}/*# sourceMappingURL=common.css.map */

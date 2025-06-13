@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+$primary-color: #e91e63;
+$secondary-color: #a81d84;
+$accent-color: #f8f8f8;
+$text-color: #333;
+$med-color: #666;
+$light-text: #999;
+$white: #fff;
+$border-color: #e0e0e0;
+$fonts: "Roboto", sans-serif;
+$fonts-2: "Roboto Slab", serif;
+
+@mixin transition($property: all, $duration: 0.3s, $easing: ease-in-out) {
+  transition: $property $duration $easing;
+}
+
+@mixin box-shadow(
+  $x: 0,
+  $y: 1px,
+  $blur: 3px,
+  $spread: 0,
+  $color: rgba(0, 0, 0, 0.1)
+) {
+  box-shadow: $x $y $blur $spread $color;
+}
+
+body {
+  font-family: $fonts;
+  color: $text-color;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: $accent-color;
+}
+
+a {
+  color: $med-color;
+  text-decoration: none;
+  @include transition();
+
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $text-color;
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+header {
+  background-color: $white;
+  padding: 10px 0;
+  @include box-shadow();
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+
+  navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    .title {
+      padding: 8px 0;
+      a {
+        font-size: 18px;
+        font-weight: 300;
+        color: $med-color;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      text-transform: uppercase;
+      font-size: 13px;
+      align-items: center;
+
+      button {
+        background-color: $primary-color;
+        border: none;
+        padding: 18px 25px;
+        border-radius: 30px;
+
+        a {
+          color: $white;
+          cursor: pointer;
+          font-weight: 300;
+          text-transform: uppercase;
+          @include transition();
+          font-size: 13px;
+
+          &:hover {
+            background-color: darken($primary-color, 10%);
+            @include box-shadow(0, 2px, 5px, 0, rgba(0, 0, 0, 0.2));
+          }
+        }
+      }
+
+      a {
+        color: $med-color;
+        font-weight: 200;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+main {
+  margin-top: 70px;
+  min-height: calc(100vh - 150px);
+}
+
+footer {
+  background-color: $secondary-color;
+  color: $white;
+  padding: 30px 0;
+  margin-top: 50px;
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+
+      a {
+        color: $white;
+        opacity: 0.8;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    .credits {
+      opacity: 0.8;
+      font-size: 14px;
+    }
+  }
+}
+
+.button {
+  background-color: $primary-color;
+  color: $white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 14px;
+  @include transition();
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    @include box-shadow(0, 2px, 5px, 0, rgba(0, 0, 0, 0.2));
+  }
+}
+
+@media (max-width: 768px) {
+  header navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
