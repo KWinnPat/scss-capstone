@@ -12,11 +12,12 @@
 }
 
 .content-wrapper {
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 0 20px;
+  margin: 0 auto;
+  padding: 50px 20px;
   display: flex;
   gap: 40px;
+  background-color: $white;
+  justify-content: center;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -24,11 +25,9 @@
 }
 
 .contact-form {
-  flex: 1;
-  background-color: $white;
-  border-radius: 5px;
   padding: 30px;
-  @include box-shadow();
+  min-width: 350px;
+  max-width: 500px;
 
   h1 {
     font-size: 28px;
@@ -43,9 +42,9 @@
     textarea {
       width: 100%;
       padding: 12px;
-      border: 1px solid $border-color;
+      border: 1px solid $white;
+      border-bottom: 1px solid $border-color;
       border-radius: 3px;
-      @include transition();
 
       &:focus {
         border-color: $primary-color;
@@ -54,7 +53,8 @@
       }
 
       &::placeholder {
-        color: $light-text;
+        color: rgba($light-text, 0.75);
+        font-weight: 200;
       }
     }
 
@@ -75,12 +75,11 @@
   flex: 1;
   display: grid;
   gap: 20px;
+  max-width: 300px;
 
   > div {
     background-color: $white;
-    border-radius: 5px;
     padding: 30px;
-    @include box-shadow();
 
     h3 {
       font-size: 20px;
@@ -96,12 +95,10 @@
     }
 
     p {
-      margin-bottom: 10px;
+      margin: 0;
       color: $light-text;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+      font-size: 14px;
+      font-weight: 300;
     }
   }
 }

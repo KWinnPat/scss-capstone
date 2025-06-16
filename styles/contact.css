@@ -162,11 +162,12 @@ footer .footer-content .credits {
 }
 
 .content-wrapper {
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 0 20px;
+  margin: 0 auto;
+  padding: 50px 20px;
   display: flex;
   gap: 40px;
+  background-color: #fff;
+  justify-content: center;
 }
 @media (max-width: 768px) {
   .content-wrapper {
@@ -175,11 +176,9 @@ footer .footer-content .credits {
 }
 
 .contact-form {
-  flex: 1;
-  background-color: #fff;
-  border-radius: 5px;
   padding: 30px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  min-width: 350px;
+  max-width: 500px;
 }
 .contact-form h1 {
   font-size: 28px;
@@ -193,9 +192,9 @@ footer .footer-content .credits {
 .contact-form form textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #fff;
+  border-bottom: 1px solid #e0e0e0;
   border-radius: 3px;
-  transition: all 0.3s ease-in-out;
 }
 .contact-form form input:focus,
 .contact-form form textarea:focus {
@@ -204,11 +203,13 @@ footer .footer-content .credits {
   box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.2);
 }
 .contact-form form input::-moz-placeholder, .contact-form form textarea::-moz-placeholder {
-  color: #999;
+  color: rgba(153, 153, 153, 0.75);
+  font-weight: 200;
 }
 .contact-form form input::placeholder,
 .contact-form form textarea::placeholder {
-  color: #999;
+  color: rgba(153, 153, 153, 0.75);
+  font-weight: 200;
 }
 .contact-form form textarea {
   resize: vertical;
@@ -223,12 +224,11 @@ footer .footer-content .credits {
   flex: 1;
   display: grid;
   gap: 20px;
+  max-width: 300px;
 }
 .contact-info-wrapper > div {
   background-color: #fff;
-  border-radius: 5px;
   padding: 30px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 .contact-info-wrapper > div h3 {
   font-size: 20px;
@@ -242,9 +242,8 @@ footer .footer-content .credits {
   font-size: 24px;
 }
 .contact-info-wrapper > div p {
-  margin-bottom: 10px;
+  margin: 0;
   color: #999;
-}
-.contact-info-wrapper > div p:last-child {
-  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 300;
 }/*# sourceMappingURL=contact.css.map */

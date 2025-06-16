@@ -1,19 +1,21 @@
 @import "common";
 
 .banner {
-  background-color: $secondary-color;
+  background: linear-gradient(45deg, #a81d84 0, #ea396f 100%);
   color: $white;
-  padding: 100px 0 60px;
+  padding: 115px 0;
   text-align: center;
 
   h1 {
     color: $white;
-    font-size: 36px;
+    font-size: 45px;
     margin-bottom: 15px;
+    font-family: $fonts;
+    font-weight: 500;
   }
 
   p {
-    opacity: 0.8;
+    font-weight: 200;
   }
 }
 
@@ -24,19 +26,17 @@
 
   figure {
     margin: 0 0 30px;
-    text-align: center;
 
     img {
       max-width: 100%;
-      height: auto;
-      border-radius: 5px;
-      @include box-shadow();
     }
 
     figcaption {
-      margin-top: 10px;
-      font-style: italic;
-      color: $light-text;
+      font-weight: bold;
+      color: $text-color;
+      font-size: 14px;
+      max-width: 435px;
+      text-align: center;
     }
   }
 
@@ -47,38 +47,61 @@
 }
 
 .blog-info-wrapper {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 3fr 1fr;
   gap: 30px;
   margin-bottom: 40px;
   padding: 20px 0;
-  border-top: 1px solid $border-color;
   border-bottom: 1px solid $border-color;
 
   > div {
-    flex: 1;
     min-width: 200px;
+
+    div {
+      display: flex;
+      text-align: left;
+    }
 
     h5 {
       font-size: 16px;
-      margin-bottom: 15px;
-      color: $secondary-color;
+      margin: 0 10px 0 0;
+      color: $text-color;
+      font-weight: 300;
+      font-family: $fonts;
     }
 
     ul {
       list-style: none;
       padding: 0;
       margin: 0;
+      display: flex;
 
       li {
-        margin-bottom: 5px;
+        margin: 0 5px;
+        font-size: 12px;
+        background-color: $primary-color;
+        border-radius: 20px;
+        padding: 5px 10px;
 
         a {
-          color: $light-text;
+          color: $white;
 
           &:hover {
             color: $primary-color;
           }
+        }
+      }
+    }
+    .tags-wrapper ul li {
+      margin: 0 5px;
+      background-color: rgba($white, 0);
+
+      a {
+        color: $primary-color;
+
+        &:hover {
+          color: rgba($secondary-color, 0.8);
         }
       }
     }
@@ -88,73 +111,86 @@
     display: flex;
     gap: 10px;
 
-    .button {
+    button {
       width: 40px;
       height: 40px;
       border-radius: 50%;
       padding: 0;
       display: flex;
       align-items: center;
+      border: none;
       justify-content: center;
+    }
+    .facebook {
+      background-color: #3b5998;
+      color: $white;
+    }
+    .twitter {
+      background-color: black;
+      color: $white;
+    }
+    .email {
+      background-color: gray;
+      color: $white;
     }
   }
 }
 
 .related-posts-wrapper {
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  padding: 40px 0;
+  background-color: $white;
 
   > div {
-    background-color: $white;
-    border-radius: 5px;
-    padding: 20px;
-    @include box-shadow();
-    @include transition();
+    margin: 0 auto 60px;
+    flex-direction: column;
+    align-items: center;
 
-    &:hover {
-      transform: translateY(-5px);
-      @include box-shadow(0, 5px, 15px, 0, rgba(0, 0, 0, 0.1));
-    }
+    padding: 0 20px;
 
     h4 {
+      padding: 0 20px 10px;
       font-size: 14px;
-      color: $light-text;
-      margin-bottom: 10px;
-
-      a {
-        color: $light-text;
-
-        &:hover {
-          color: $primary-color;
-        }
-      }
-    }
-
-    h3 {
-      font-size: 20px;
-      margin-bottom: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 100;
 
       a {
         color: $secondary-color;
+        text-transform: uppercase;
 
         &:hover {
           color: $primary-color;
         }
       }
-    }
 
-    p {
-      color: $light-text;
-      margin-bottom: 15px;
+      b {
+        font-weight: 900;
+      }
     }
+  }
 
-    a[href*="Read"] {
-      display: inline-block;
-      font-weight: 500;
+  h3 {
+    padding: 0 20px;
+    font-size: 20px;
+    margin-bottom: 15px;
+
+    a {
+      color: $med-color;
+
+      &:hover {
+        color: $primary-color;
+      }
     }
+  }
+
+  p {
+    padding: 0 20px;
+    color: $light-text;
+    font-weight: 300;
+  }
+
+  a[href*="Read"] {
+    display: inline-block;
+    padding: 0 20px 20px;
+    font-weight: 500;
   }
 }
