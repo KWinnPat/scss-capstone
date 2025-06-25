@@ -5,6 +5,8 @@
   color: $white;
   padding: 115px 0;
   text-align: center;
+  position: relative;
+  top: 50px;
 
   h1 {
     color: $white;
@@ -19,13 +21,17 @@
   }
 }
 
+.float-wrapper {
+  top: -50px;
+}
+
 .content {
   max-width: 800px;
   margin: 50px auto;
   padding: 0 20px;
 
   figure {
-    margin: 0 0 30px;
+    padding: 30px 0;
 
     img {
       max-width: 100%;
@@ -120,6 +126,7 @@
       align-items: center;
       border: none;
       justify-content: center;
+      @include box-shadow(0, 2px, 5px, 0, rgba(0, 0, 0, 0.2));
     }
     .facebook {
       background-color: #3b5998;
@@ -136,16 +143,20 @@
   }
 }
 
+h1 {
+  text-align: center;
+}
 .related-posts-wrapper {
   padding: 40px 0;
-  background-color: $white;
+  display: flex;
+  justify-content: space-around;
 
   > div {
-    margin: 0 auto 60px;
-    flex-direction: column;
-    align-items: center;
-
-    padding: 0 20px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: $white;
+    border-radius: 10px;
+    max-width: 250px;
 
     h4 {
       padding: 0 20px 10px;

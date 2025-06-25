@@ -36,7 +36,7 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 1000;
+  z-index: 3;
 }
 header navbar {
   display: flex;
@@ -46,13 +46,8 @@ header navbar {
   margin: 0 auto;
   padding: 0 15px;
 }
-header navbar .title {
-  padding: 8px 0;
-}
 header navbar .title a {
   font-size: 18px;
-  font-weight: 300;
-  color: #666;
   font-family: Arial, Helvetica, sans-serif;
 }
 header navbar .nav-links {
@@ -62,13 +57,11 @@ header navbar .nav-links {
   font-size: 13px;
   align-items: center;
 }
-header navbar .nav-links button {
+header navbar .nav-links .more {
   background-color: #e91e63;
   border: none;
   padding: 18px 25px;
   border-radius: 30px;
-}
-header navbar .nav-links button a {
   color: #fff;
   cursor: pointer;
   font-weight: 300;
@@ -76,21 +69,37 @@ header navbar .nav-links button a {
   transition: all 0.3s ease-in-out;
   font-size: 13px;
 }
-header navbar .nav-links button a:hover {
-  background-color: #c1134e;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+header navbar .nav-links .more:hover {
+  color: rgba(255, 255, 255, 0.5);
+  z-index: 4;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
 }
-header navbar .nav-links a {
+header navbar .nav-links:hover {
+  color: #c1134e;
+}
+header navbar a {
   color: #666;
   font-weight: 200;
 }
-header navbar .nav-links a:hover {
+header navbar a:hover {
   color: #e91e63;
 }
 
 main {
-  margin-top: 70px;
+  margin-top: 20px;
   min-height: calc(100vh - 150px);
+}
+
+.float-wrapper {
+  background-color: #fff;
+  width: 97%;
+  z-index: 1;
+  border: 0px solid rgba(0, 0, 0, 0);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 footer {
@@ -136,10 +145,6 @@ footer .footer-content .credits {
   text-transform: uppercase;
   transition: all 0.3s ease-in-out;
 }
-.button:hover {
-  background-color: #c1134e;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-}
 
 @media (max-width: 768px) {
   header navbar {
@@ -156,6 +161,8 @@ footer .footer-content .credits {
   color: #fff;
   padding: 115px 0;
   text-align: center;
+  position: relative;
+  top: 50px;
 }
 .banner h1 {
   color: #fff;
@@ -168,13 +175,17 @@ footer .footer-content .credits {
   font-weight: 200;
 }
 
+.float-wrapper {
+  top: -50px;
+}
+
 .content {
   max-width: 800px;
   margin: 50px auto;
   padding: 0 20px;
 }
 .content figure {
-  margin: 0 0 30px;
+  padding: 30px 0;
 }
 .content figure img {
   max-width: 100%;
@@ -256,6 +267,7 @@ footer .footer-content .credits {
   align-items: center;
   border: none;
   justify-content: center;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
 }
 .blog-info-wrapper .share-wrapper .facebook {
   background-color: #3b5998;
@@ -270,15 +282,21 @@ footer .footer-content .credits {
   color: #fff;
 }
 
+h1 {
+  text-align: center;
+}
+
 .related-posts-wrapper {
   padding: 40px 0;
-  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
 }
 .related-posts-wrapper > div {
-  margin: 0 auto 60px;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 20px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  max-width: 250px;
 }
 .related-posts-wrapper > div h4 {
   padding: 0 20px 10px;

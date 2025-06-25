@@ -63,7 +63,7 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 1000;
+  z-index: 3;
 
   navbar {
     display: flex;
@@ -73,14 +73,9 @@ header {
     margin: 0 auto;
     padding: 0 15px;
 
-    .title {
-      padding: 8px 0;
-      a {
-        font-size: 18px;
-        font-weight: 300;
-        color: $med-color;
-        font-family: Arial, Helvetica, sans-serif;
-      }
+    .title a {
+      font-size: 18px;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .nav-links {
@@ -90,42 +85,55 @@ header {
       font-size: 13px;
       align-items: center;
 
-      button {
+      .more {
         background-color: $primary-color;
         border: none;
         padding: 18px 25px;
         border-radius: 30px;
-
-        a {
-          color: $white;
-          cursor: pointer;
-          font-weight: 300;
-          text-transform: uppercase;
-          @include transition();
-          font-size: 13px;
-
-          &:hover {
-            background-color: darken($primary-color, 10%);
-            @include box-shadow(0, 2px, 5px, 0, rgba(0, 0, 0, 0.2));
-          }
+        color: $white;
+        cursor: pointer;
+        font-weight: 300;
+        text-transform: uppercase;
+        @include transition();
+        font-size: 13px;
+        &:hover {
+          color: rgba($white, 0.5);
+          z-index: 4;
+          @include box-shadow(0, 2px, 5px, 0, rgba(0, 0, 0, 0.5));
         }
       }
 
-      a {
-        color: $med-color;
-        font-weight: 200;
+      &:hover {
+        color: darken($primary-color, 10%);
+      }
+    }
 
-        &:hover {
-          color: $primary-color;
-        }
+    a {
+      color: $med-color;
+      font-weight: 200;
+
+      &:hover {
+        color: $primary-color;
       }
     }
   }
 }
 
 main {
-  margin-top: 70px;
+  margin-top: 20px;
   min-height: calc(100vh - 150px);
+}
+
+.float-wrapper {
+  background-color: $white;
+  width: 97%;
+  z-index: 1;
+  border: 0px solid rgba(0, 0, 0, 0);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 0 auto;
+  position: relative;
+  @include box-shadow(0, 5px, 10px, 0, rgba(0, 0, 0, 0.5));
 }
 
 footer {
@@ -175,11 +183,6 @@ footer {
   font-weight: 200;
   text-transform: uppercase;
   @include transition();
-
-  &:hover {
-    background-color: darken($primary-color, 10%);
-    @include box-shadow(0, 2px, 5px, 0, rgba(0, 0, 0, 0.2));
-  }
 }
 
 @media (max-width: 768px) {

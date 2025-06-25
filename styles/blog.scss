@@ -1,10 +1,21 @@
 @import "common";
 
+$category-colors: (
+  1: purple,
+  2: cyan,
+  3: red,
+  4: orange,
+  5: magenta,
+  6: green,
+  7: purple,
+);
+
 .banner {
   background: linear-gradient(45deg, #a81d84 0, #ea396f 100%);
-  color: $white;
   padding: 115px 0;
   text-align: center;
+  position: relative;
+  top: 50px;
 
   h1 {
     color: $white;
@@ -17,32 +28,29 @@
 
 .blog-content {
   padding: 40px 0;
-  background-color: $white;
 
   > div {
     margin: 0 auto 60px;
-    flex-direction: column;
-    align-items: center;
-
     padding: 0 20px;
+    @each $nth-child, $color in $category-colors {
+      &:nth-child(#{$nth-child}) h4 {
+        padding: 0 20px 10px;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 100;
 
-    h4 {
-      padding: 0 20px 10px;
-      font-size: 14px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-weight: 100;
+        a {
+          color: $color;
+          text-transform: uppercase;
 
-      a {
-        color: $secondary-color;
-        text-transform: uppercase;
-
-        &:hover {
-          color: $primary-color;
+          &:hover {
+            color: $primary-color;
+          }
         }
-      }
 
-      b {
-        font-weight: 900;
+        b {
+          font-weight: 900;
+        }
       }
     }
   }

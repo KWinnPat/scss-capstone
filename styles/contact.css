@@ -36,7 +36,7 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 1000;
+  z-index: 3;
 }
 header navbar {
   display: flex;
@@ -46,13 +46,8 @@ header navbar {
   margin: 0 auto;
   padding: 0 15px;
 }
-header navbar .title {
-  padding: 8px 0;
-}
 header navbar .title a {
   font-size: 18px;
-  font-weight: 300;
-  color: #666;
   font-family: Arial, Helvetica, sans-serif;
 }
 header navbar .nav-links {
@@ -62,13 +57,11 @@ header navbar .nav-links {
   font-size: 13px;
   align-items: center;
 }
-header navbar .nav-links button {
+header navbar .nav-links .more {
   background-color: #e91e63;
   border: none;
   padding: 18px 25px;
   border-radius: 30px;
-}
-header navbar .nav-links button a {
   color: #fff;
   cursor: pointer;
   font-weight: 300;
@@ -76,21 +69,37 @@ header navbar .nav-links button a {
   transition: all 0.3s ease-in-out;
   font-size: 13px;
 }
-header navbar .nav-links button a:hover {
-  background-color: #c1134e;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+header navbar .nav-links .more:hover {
+  color: rgba(255, 255, 255, 0.5);
+  z-index: 4;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
 }
-header navbar .nav-links a {
+header navbar .nav-links:hover {
+  color: #c1134e;
+}
+header navbar a {
   color: #666;
   font-weight: 200;
 }
-header navbar .nav-links a:hover {
+header navbar a:hover {
   color: #e91e63;
 }
 
 main {
-  margin-top: 70px;
+  margin-top: 20px;
   min-height: calc(100vh - 150px);
+}
+
+.float-wrapper {
+  background-color: #fff;
+  width: 97%;
+  z-index: 1;
+  border: 0px solid rgba(0, 0, 0, 0);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
 }
 
 footer {
@@ -135,10 +144,6 @@ footer .footer-content .credits {
   font-weight: 200;
   text-transform: uppercase;
   transition: all 0.3s ease-in-out;
-}
-.button:hover, .contact-form form button:hover {
-  background-color: #c1134e;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
@@ -218,6 +223,7 @@ footer .footer-content .credits {
 .contact-form form button {
   justify-self: start;
   padding: 12px 30px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .contact-info-wrapper {

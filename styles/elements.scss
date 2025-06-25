@@ -1,10 +1,21 @@
 @import "common";
 
+$heading-sizes: (
+  h1: 32px,
+  h2: 28px,
+  h3: 24px,
+  h4: 20px,
+  h5: 18px,
+  h6: 16px,
+);
+
 .banner {
   background: linear-gradient(45deg, #a81d84 0, #ea396f 100%);
   color: $white;
   padding: 115px 0;
   text-align: center;
+  position: relative;
+  top: 50px;
 
   h1 {
     color: $white;
@@ -13,6 +24,10 @@
     font-family: $fonts;
     font-weight: 500;
   }
+}
+
+.float-wrapper {
+  top: -50px;
 }
 
 .content-wrapper {
@@ -31,36 +46,14 @@
   background-color: $white;
   border-radius: 5px;
   padding: 30px;
-  @include box-shadow();
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 30px 0 15px;
-    font-family: $fonts;
-    font-weight: 500;
-  }
-
-  h1 {
-    font-size: 32px;
-  }
-  h2 {
-    font-size: 28px;
-  }
-  h3 {
-    font-size: 24px;
-  }
-  h4 {
-    font-size: 20px;
-  }
-  h5 {
-    font-size: 18px;
-  }
-  h6 {
-    font-size: 16px;
+  @each $heading, $size in $heading-sizes {
+    #{$heading} {
+      font-size: $size;
+      margin: 30px 0 15px;
+      font-family: $fonts;
+      font-weight: 500;
+    }
   }
 
   p {
@@ -148,6 +141,7 @@
 
   .button {
     margin-right: 10px;
+    @include box-shadow(0, 2px, 5px, 0, rgba(0, 0, 0, 0.2));
   }
 }
 
@@ -169,7 +163,6 @@
     }
 
     h5 {
-      font-size: 16px;
       margin: 0 10px 0 0;
       color: $text-color;
       font-weight: 300;
@@ -225,6 +218,7 @@
       align-items: center;
       border: none;
       justify-content: center;
+      @include box-shadow(0, 2px, 5px, 0, rgba(0, 0, 0, 0.2));
     }
     .facebook {
       background-color: #3b5998;
@@ -241,16 +235,20 @@
   }
 }
 
+h1 {
+  text-align: center;
+}
 .related-posts-wrapper {
   padding: 40px 0;
-  background-color: $white;
+  display: flex;
+  justify-content: space-around;
 
   > div {
-    margin: 0 auto 60px;
-    flex-direction: column;
-    align-items: center;
-
-    padding: 0 20px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: $white;
+    border-radius: 10px;
+    max-width: 250px;
 
     h4 {
       padding: 0 20px 10px;
